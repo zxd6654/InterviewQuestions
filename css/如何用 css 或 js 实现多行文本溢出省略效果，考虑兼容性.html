@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    P {
+        width: 100px;
+        border: 1px solid;
+
+        /* 单行 */
+        /* overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; */
+
+        /* 多行 */
+        /* display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        /*行数*/
+        /* overflow: hidden; */
+
+    }
+
+    /* 兼容： */
+    /* p {
+        position: relative;
+        line-height: 20px;
+        max-height: 40px;
+        overflow: hidden;
+    }
+
+    p::after {
+        content: "...";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-left: 40px;
+        background: -webkit-linear-gradient(left, transparent, #fff 55%);
+        background: -o-linear-gradient(right, transparent, #fff 55%);
+        background: -moz-linear-gradient(right,
+                transparent, #fff 55%);
+        background: linear-gradient(to right, transparent, #fff 55%);
+    } */
+</style>
+
+<body>
+    <p>这是一段测试文字，this is some test text，测试文字，测试文字测 </p>
+
+    <script>
+        const p = document.querySelector('p');
+        let words = p.innerHTML.split(/(?<=[\u4e00-\u9fa5])|(?<=\w*?\b)/g);
+        while (p.scrollHeight > p.clientHeight) {
+            words.pop();
+            p.innerHTML = words.join('') + '...';
+        }
+    </script>
+</body>
+
+</html>

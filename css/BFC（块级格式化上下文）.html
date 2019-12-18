@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>BFC（块级格式化上下文）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
+
 <body>
-方法1：overflow: 不为visible，可以让属性是 hidden、auto。【最常用】
-方法2：浮动中：float的属性值不为none。意思是，只要设置了浮动，当前元素就创建了BFC。
-方法3：定位中：只要posiiton的值不是 static或者是relative即可，可以是absolute或fixed，也就生成了一个BFC。
-方法4：display为inline-block, table-cell, table-caption, flex, inline-flex
+    方法1：overflow: 不为visible，可以让属性是 hidden、auto。【最常用】
+    方法2：浮动中：float的属性值不为none。意思是，只要设置了浮动，当前元素就创建了BFC。
+    方法3：定位中：只要posiiton的值不是 static或者是relative即可，可以是absolute或fixed，也就生成了一个BFC。
+    方法4：display为inline-block, table-cell, table-caption, flex, inline-flex
+
+
+
 </body>
+
 </html>
