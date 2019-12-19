@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var b = 10;
+        (function b() {
+            b = 20;
+            console.log(b);
+        })();
+    </script>
+
+    上式function用括号括起来了，说明这是一个函数表达式，而不是一个函数声明。
+    括号可以改变运算符的优先级，在这里它是一个分组符。
+    可参考文章：https://www.cnblogs.com/TomXu/archive/2011/12/29/2290308.html
+    具名函数表达式中的函数名在函数内部是可以访问的，但函数外面是无法访问到的，这点和函数声明有很大的不同。
+    没有括号的话，全局变量是可以访问到b的。至于函数里面的b是全局变量自然不必细说。
+    因此，console.log里面的b肯定先在函数内部找，然后再在全局找，所有b就是funcition
+    b{}。
+</body>
+
+</html>
